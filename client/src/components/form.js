@@ -1,13 +1,11 @@
 import { useState } from "react";
 import axios from "axios";
-import "bootstrap/dist/css/bootstrap.css"
-import "./form.css"
 
 export function UserForm() {
   const [form, setForm] = useState({
     name: "",
     email: "",
-    instagram_username: "",
+    username: "",
     number: "",
     event : "",
   });
@@ -20,7 +18,7 @@ export function UserForm() {
     e.preventDefault();
 
     try {
-      const response = await axios.post("http://127.0.0.1/media-kit/", form);
+      const response = await axios.post("http://127.0.0.1:3000/media-kit/", form);
 
       window.location.reload(true);
 
@@ -60,7 +58,7 @@ export function UserForm() {
             class="form-control"
           />
         </p>{" "}
-        <label htmlFor="instagram_username" class="form-group">Instagram Username</label>
+        <label htmlFor="username" class="form-group">Instagram Username</label>
         <p>
           {" "}
           <div class="input-group mb-2">
@@ -68,8 +66,8 @@ export function UserForm() {
           <div class="input-group-text">@</div>
         </div>
         <input type="text" class="form-control" 
-         id="instagram_username"
-         name="instagram_username"
+         id="username"
+         name="username"
          value={form.instagram_username}
          onChange={handleChange}
        />
@@ -96,9 +94,9 @@ export function UserForm() {
             type="text"
             value={form.event}
             onChange={handleChange} >
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
+      <option>Hostess</option>
+      <option>Cerimonal</option>
+      <option>Reception</option>
     </select>
         </p>{" "}
         <button type="submit" id="btn" class="btn btn-primary">

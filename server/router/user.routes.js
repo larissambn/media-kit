@@ -1,6 +1,6 @@
 import express from "express";
 import { UserModel } from "../model/user.model.js";
-import "mongodb";
+import mongoose from "mongoose"
 
 const userRouter = express.Router();
 
@@ -50,10 +50,15 @@ userRouter.post("/user", async (req, res) => {
 
 userRouter.get("/:id", async (req, res) => {
   try {
-    const id = (req.params.id).trim();
-    const userData = await UserModel.findOne({_id:mongodb.ObjectId(id)})
-    console.log(userData); 
+    // const id = (req.params.id).trim();
+    // const ObjectId = new ObjectId();
+    // console.log(ObjectId);
+    
+    const userData = await UserModel.findOne({_id: req.params.id});
 
+    //({_id:mongoose.Types.ObjectId.(id)})
+
+    console.log(userData); 
     return res.status(200).json(userData);
   } catch (err) {
     console.log(err);
