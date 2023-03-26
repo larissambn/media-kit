@@ -34,7 +34,7 @@ export function UserForm() {
       <h1 className="text-center"> Profile</h1>
       <form onSubmit={handleSubmit}>
         {" "}
-        <label htmlFor="name" class="form-group colFormLabelLg">Name</label>{" "}
+        <label htmlFor="name" className="form-group colFormLabelLg">Name</label>{" "}
         <p>
           {" "}
           <input
@@ -46,7 +46,7 @@ export function UserForm() {
             class="form-control"
           />
         </p>{" "}
-        <label htmlFor="email" class="form-group">E-mail</label>{" "}
+        <label htmlFor="email" className="form-group">E-mail</label>{" "}
         <p>
           {" "}
           <input
@@ -58,7 +58,7 @@ export function UserForm() {
             class="form-control"
           />
         </p>{" "}
-        <label htmlFor="username" class="form-group">Instagram Username</label>
+        <label htmlFor="username" className="form-group">Instagram Username</label>
         <p>
           {" "}
           <div class="input-group mb-2">
@@ -73,7 +73,7 @@ export function UserForm() {
        />
       </div>
         </p>{" "}
-        <label htmlFor="number" class="form-group">Phone Number</label>
+        <label htmlFor="number" className="form-group">Phone Number</label>
         <p>
           {" "}
           <input
@@ -85,10 +85,10 @@ export function UserForm() {
             class="form-control"
           />
         </p>{" "}
-        <label htmlFor="event" class="form-group">Event</label>
+        <label htmlFor="event" className="form-group">Event</label>
         <p>
           {" "}
-    <select multiple class="form-control"             
+    <select multiple className="form-control"             
             id="event"
             name="event"
             type="text"
@@ -99,7 +99,7 @@ export function UserForm() {
       <option>Reception</option>
     </select>
         </p>{" "}
-        <button type="submit" id="btn" class="btn btn-primary">
+        <button type="submit" id="btn" className="btn btn-primary">
           Send
         </button>
       </form>

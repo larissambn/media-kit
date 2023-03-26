@@ -9,7 +9,7 @@ const userSchema = new Schema({
     trim: true,
     match: /[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/gm,
   },
-  username: { type: Schema.Types.ObjectId, required: true, trim: true, unique: true },
+  username: { type: String, required: true, trim: true, unique: true },
   phoneNumber: { type: Number },
   event: { type: String, enum: ["HOSTESS", "CERIMONAL", "STAFF"], default: "HOSTESS"},  
 });
