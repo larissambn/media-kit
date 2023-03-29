@@ -1,7 +1,9 @@
 import { useState } from "react";
-import axios from "axios";
+import api from "../api/api.js";
+import { useNavigate } from "react-router-dom";
 
 export function UserForm() {
+  const navigate = useNavigate();
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -18,9 +20,9 @@ export function UserForm() {
     e.preventDefault();
 
     try {
-      const response = await axios.post("http://127.0.0.1:3000/media-kit/", form);
+      const response = await api.post("/", form);
 
-      window.location.reload(true);
+      navigate("/:id");
 
       console.log(response);
     } catch (err) {

@@ -47,12 +47,15 @@ userRouter.post("/", async (req, res) => {
   }
 });
 
-userRouter.get("/user/:id", async (req, res) => {
+userRouter.get("/:id", async (req, res) => {
   try {
         
-    const objectId = new objectId(); // use New to object id is required
-    const id = objectId(req.params.id); // convert to ObjectID (string requirements)
-    const userData = await UserModel.findById({_id: id});
+    //const objectId = new objectId(); // use New to object id is required
+    //const id = objectId(req.params.id); // convert to ObjectID (string requirements)
+    //const userData = await UserModel.findById({_id: id});
+
+    const { id } = req.params;
+    const userData = await UserModel.findOne({ _id: id })
     console.log(userData); 
 
     return res.status(200).json(userData);
