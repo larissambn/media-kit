@@ -54,7 +54,7 @@ userRouter.get("/:id", async (req, res) => {
     //const id = objectId(req.params.id); // convert to ObjectID (string requirements)
     //const userData = await UserModel.findById({_id: id});
 
-    const { id } = req.params;
+    const { id } = req.params.id;
     const userData = await UserModel.findOne({ _id: id })
     console.log(userData); 
 
