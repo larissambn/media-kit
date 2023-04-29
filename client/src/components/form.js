@@ -20,7 +20,7 @@ export function UserForm() {
     e.preventDefault();
 
     try {
-      const response = await api.post("/", form);
+      const response = await api.post("http://localhost:3000/", form);
 
       navigate("/:id");
 
