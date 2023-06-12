@@ -22,5 +22,5 @@ app.use(cors());
 app.use(`/`,userRouter);
 
 app.listen(Number(process.env.PORT), () => {
-    console.log(`Server running on port`);
+    console.log(`Server connected and running`);
   });
